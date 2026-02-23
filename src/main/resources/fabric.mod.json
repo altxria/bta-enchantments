@@ -3,9 +3,9 @@
 	"id": "examplemod",
 	"version": "${version}",
 	"name": "Example Mod",
-	"description": "This mod aims to help new BTA modders.",
+	"description": "im testing :)",
 	"authors": [
-		"Turnip Labs"
+		"altxria"
 	],
 	"contact": {
 		"homepage": "",
@@ -16,16 +16,16 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"turniplabs.examplemod.ExampleMod"
+          "altxria.examplemod.ExampleMod"
 		],
 		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+          "altxria.examplemod.ExampleMod"
 		],
 		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+          "altxria.examplemod.ExampleMod"
 		],
 		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
+          "altxria.examplemod.ExampleMod"
 		]
 	},
 	"mixins": [
