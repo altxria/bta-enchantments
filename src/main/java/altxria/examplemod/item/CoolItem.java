@@ -1,4 +1,4 @@
-package altxria.examplemod;
+package altxria.examplemod.item;
 import net.minecraft.core.item.Item;
 
 public class CoolItem extends Item {

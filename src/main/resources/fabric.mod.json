@@ -25,7 +25,16 @@
           "altxria.examplemod.ExampleMod"
 		],
 		"recipesReady": [
-          "altxria.examplemod.ExampleMod"
+          "altxria.examplemod.RecipeWork"
+		],
+		"clientStart": [
+			"altxria.examplemod.Client"
+		],
+		"afterClientStart": [
+			"altxria.examplemod.Client"
+		],
+		"initModels": [
+			"altxria.examplemod.ModelWork"
 		]
 	},
 	"mixins": [
