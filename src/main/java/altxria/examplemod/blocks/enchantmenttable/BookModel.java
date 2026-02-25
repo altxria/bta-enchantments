@@ -6,17 +6,11 @@ import net.minecraft.core.util.helper.MathHelper;
 
 public class BookModel extends ModelBase {
 	public Cube coverRight = new Cube(0, 0);
-
 	public Cube coverLeft = new Cube(16, 0);
-
 	public Cube pagesRight = new Cube(0, 10);
-
 	public Cube pagesLeft = new Cube(12, 10);
-
 	public Cube flippingPageRight = new Cube(24, 10);
-
 	public Cube flippingPageLeft = new Cube(24, 10);
-
 	public Cube bookSpine = new Cube(12, 0);
 
 	public BookModel() {
@@ -30,7 +24,8 @@ public class BookModel extends ModelBase {
 
 		coverRight.setRotationPoint(0.0F, 0.0F, -1.0F);
 		coverLeft.setRotationPoint(0.0F, 0.0F, 1.0F);
-		bookSpine.y = (float) Math.PI / 2.0F;
+
+		bookSpine.yRot = (float) Math.PI / 2.0F;
 	}
 
 	@Override
@@ -45,22 +40,21 @@ public class BookModel extends ModelBase {
 		flippingPageLeft.render(scale);
 	}
 
-	// Inside BookModel
 	public void setRotationAngles(float limbSwing, float limbYaw, float limbPitch, float headYaw, float headPitch, float scale) {
 		float f = (MathHelper.sin(limbSwing * 0.02F) * 0.1F + 1.25F) * headYaw;
 
-		coverRight.y = ((float) Math.PI + f);
-		coverLeft.y = -f;
-		pagesRight.y = f;
-		pagesLeft.y = -f;
+		coverRight.yRot = ((float) Math.PI + f);
+		coverLeft.yRot = -f;
+		pagesRight.yRot = f;
+		pagesLeft.yRot = -f;
 
-		flippingPageRight.y = f - f * 2.0F * limbYaw;
-		flippingPageLeft.y = f - f * 2.0F * limbPitch;
+		flippingPageRight.yRot = f - f * 2.0F * limbYaw;
+		flippingPageLeft.yRot = f - f * 2.0F * limbPitch;
 
-		// We KEEP setRotationPoint here because this is moving the hinge point of the page
-		pagesRight.setRotationPoint(MathHelper.sin(f), 0.0F, 0.0F);
-		pagesLeft.setRotationPoint(MathHelper.sin(f), 0.0F, 0.0F);
-		flippingPageRight.setRotationPoint(MathHelper.sin(f), 0.0F, 0.0F);
-		flippingPageLeft.setRotationPoint(MathHelper.sin(f), 0.0F, 0.0F);
+		float newX = MathHelper.sin(f);
+		pagesRight.x = newX;
+		pagesLeft.x = newX;
+		flippingPageRight.x = newX;
+		flippingPageLeft.x = newX;
 	}
 }

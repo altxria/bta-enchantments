@@ -5,7 +5,6 @@ import net.minecraft.client.render.tessellator.Tessellator;
 import net.minecraft.client.render.tileentity.TileEntityRenderer;
 import org.lwjgl.opengl.GL11;
 
-import static altxria.examplemod.ExampleMod.LOGGER;
 import static altxria.examplemod.ExampleMod.MOD_ID;
 
 public class EnchantmentTableTileEntityRenderer extends TileEntityRenderer<EnchantmentTableTileEntity> {
